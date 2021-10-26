@@ -23,6 +23,9 @@ runs:
       run: sudo apt-get install libperl-dev
       shell: bash
 
+    - run: echo "::group::Configure the source"
+      shell: bash   
+
     - name: Configure the source
       run: >
         ./configure
@@ -30,11 +33,14 @@ runs:
         --enable-shared
         --with-systemd
         --prefix=/usr/local
-        --sysconfdir=/etc
-        --datadir=/share
+        --sysconfdir=/usr/local/etc
+        --datadir=/usr/local/share
         --with-persistent-directory=/var/lib/snmp
       shell: bash
       working-directory: net-snmp-${{ inputs.netsnmp-version }}
+    
+    - run: echo "::endgroup::"
+      shell: bash   
 
     - name: Make snmp
       run: make
