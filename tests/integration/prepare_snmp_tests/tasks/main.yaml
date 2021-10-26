@@ -27,3 +27,9 @@
     name: snmpd
     state: started
   become: True
+
+- name: Run the snmpd daemon
+  ansible.builtin.service: 
+    name: snmpd
+    state: restarted
+  become: True
