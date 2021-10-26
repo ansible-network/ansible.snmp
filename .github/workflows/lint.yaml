@@ -18,11 +18,7 @@ jobs:
       
       - name: Install test requirements
         run: pip3 install -r test-requirements.txt
-      
-      - name: Prepare the collection
-        id: prepare_collection
-        uses: ./.github/actions/ansible_collection
-      
+   
       - name: Run pylint
         run: pylint --verbose -ry plugins
       
@@ -30,4 +26,4 @@ jobs:
         run: black -l79 --check .
       
       - name: Run ansible-test sanity
-        run: ansible-test sanity --python ${{ matrix.python-version }}" 
+        run: ansible-test sanity --python ${{ matrix.python-version }}
