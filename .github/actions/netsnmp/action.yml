@@ -29,29 +29,31 @@ runs:
         echo ::endgroup::
       shell: bash
 
-    - name: Configure the source
-      run: |
-        echo ::group::Configure the source
+    - run: |
+        echo ::group::Configuring the source
         ./configure --with-python-modules --enable-shared --with-systemd --prefix=/usr/local --sysconfdir=/usr/local/etc --datadir=/usr/local/share --with-persistent-directory=/var/lib/snmp
         echo ::endgroup::
       shell: bash
       working-directory: net-snmp-${{ inputs.netsnmp-version }}
     
-    - run: echo "::endgroup::"
-      shell: bash   
-
-    - name: Make snmp
-      run: make
+    - run: |
+        echo ::group::Running make
+        make
+        echo ::endgroup::
       shell: bash
       working-directory: net-snmp-${{ inputs.netsnmp-version }}
 
-    - name: Install netsnmp
-      run: sudo make install
+    - run: |
+        echo ::group::Installing snmp
+        sudo make install
+        echo ::endgroup::
       shell: bash
       working-directory: net-snmp-${{ inputs.netsnmp-version }}
 
-    - name: Add the netsnmp library install path to ldconfig
-      run: sudo ldconfig -v | grep snmp #echo "/usr/local/lib" | sudo tee /etc/ld.so.conf.d/netsnmp.conf && 
+    - run: |
+        echo ::group::Add the netsnmp library install path to ldconfig
+        sudo ldconfig -v | grep snmp #echo "/usr/local/lib" | sudo tee /etc/ld.so.conf.d/netsnmp.conf && 
+        echo ::endgroup::
       shell: bash
 
     - name: Confirm version 
