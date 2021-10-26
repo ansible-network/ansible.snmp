@@ -1,4 +1,4 @@
-name: Collection integration tests
+name: Collection lint tests
 on: [push, pull_request]
 jobs:
   deps:
@@ -18,6 +18,10 @@ jobs:
       
       - name: Install test requirements
         run: pip3 install -r test-requirements.txt
+      
+      - name: Prepare the collection
+        id: prepare_collection
+        uses: ./.github/actions/ansible_collection
       
       - name: Run pylint
         run: cd .. && pylint  ${{ steps.prepare_collection.outputs.collection_name }}
