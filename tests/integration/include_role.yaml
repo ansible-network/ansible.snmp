@@ -1,6 +1,4 @@
 ---
-- debug:
-    msg: "::group::{{ item }}"
 - name: include roles
   block:
     - name: Run target role
@@ -10,5 +8,3 @@
     - name: Report target failure
       set_fact:
         integration_target_failures: "{{ integration_target_failures + [item.split('/')[-1]] }}"
-- debug:
-    msg: "::endgroup::"
