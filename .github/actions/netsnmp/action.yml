@@ -11,11 +11,13 @@ runs:
   using: "composite"
   steps:
   
-    - name: Download the source
-      run: |
+    - run: |
         echo ::group::Download the source
         wget http://sourceforge.net/projects/net-snmp/files/net-snmp/${{ inputs.netsnmp-version }}/net-snmp-${{ inputs.netsnmp-version }}.tar.gz 2>&1
         echo ::endgroup::
+      shell: bash
+
+    - run: |
         echo ::group::Extract the contents
         tar -xvf net-snmp-${{ inputs.netsnmp-version }}.tar.gz
         echo ::endgroup::
@@ -54,25 +56,35 @@ runs:
         echo ::endgroup::
       shell: bash
 
-    - name: Confirm version 
-      run: snmpget --version
+    - run: |
+        echo ::group::Confirm version
+        snmpget --version
+        echo ::endgroup::
       shell: bash
 
-    - name: Build the python bindings
-      run: python setup.py build
+    - run: |
+        echo ::group::Build the python bindings
+        python setup.py build
+        echo ::endgroup::
       shell: bash
       working-directory: net-snmp-${{ inputs.netsnmp-version }}/python
 
-    - name: Ensure setuptools is installed for sudo
-      run: sudo env "PATH=$PATH" python -m pip install setuptools
+    - run: |
+        echo ::group::Ensure setuptools is installed for sudo
+        sudo env "PATH=$PATH" python -m pip install setuptools
+        echo ::endgroup::
       shell: bash
 
-    - name: Install the python bindings
-      run: sudo env "PATH=$PATH" python setup.py install
+    - run: |
+        echo ::group::Install the python bindings
+        sudo env "PATH=$PATH" python setup.py install
+        echo ::endgroup::
       shell: bash
       working-directory: net-snmp-${{ inputs.netsnmp-version }}/python
     
-    - name: Confim python binding available
-      run: python -c 'import netsnmp'
+    - run: |
+        echo ::group::Confirm the python bindings are available
+        python -c 'import netsnmp'
+        echo ::endgroup::
       shell: bash
 
