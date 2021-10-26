@@ -23,19 +23,11 @@ runs:
       run: sudo apt-get install libperl-dev
       shell: bash
 
-    - run: echo "::group::Configure the source"
-      shell: bash   
-
     - name: Configure the source
-      run: >
-        ./configure
-        --with-python-modules
-        --enable-shared
-        --with-systemd
-        --prefix=/usr/local
-        --sysconfdir=/usr/local/etc
-        --datadir=/usr/local/share
-        --with-persistent-directory=/var/lib/snmp
+      run: |
+        echo ::group::Configure the source
+        ./configure --with-python-modules --enable-shared --with-systemd --prefix=/usr/local --sysconfdir=/usr/local/etc --datadir=/usr/local/share --with-persistent-directory=/var/lib/snmp
+        echo ::endgroup::
       shell: bash
       working-directory: net-snmp-${{ inputs.netsnmp-version }}
     

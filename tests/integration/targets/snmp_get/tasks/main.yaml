@@ -7,4 +7,4 @@
   - v2c
   - v3usm
   loop_control:
-    loop_var: varsion
+    loop_var: version
