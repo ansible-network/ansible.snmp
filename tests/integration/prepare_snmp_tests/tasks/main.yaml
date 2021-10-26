@@ -1,16 +1,16 @@
-- name: Build snmpd.conf directory
-  file:
-    path:  /usr/local/etc/snmp/
-    state: directory
-  vars:
-    ansible_connection: local
-  become: True
-  run_once: True
+# - name: Build snmpd.conf directory
+#   file:
+#     path:  /usr/local/etc/snmp/
+#     state: directory
+#   vars:
+#     ansible_connection: local
+#   become: True
+#   run_once: True
 
 - name: Copy snmp configuration file
   ansible.builtin.copy:
     src: snmpd.conf
-    dest: /usr/local/etc/snmp/snmpd.conf
+    dest: /usr/share/snmp/snmpd.conf #/usr/local/etc/snmp/snmpd.conf
   vars:
     ansible_connection: local
   become: True
