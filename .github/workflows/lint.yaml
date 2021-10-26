@@ -24,7 +24,7 @@ jobs:
         uses: ./.github/actions/ansible_collection
       
       - name: Run pylint
-        run: cd .. && pylint ${{ steps.prepare_collection.outputs.collection_namespace }.${{ steps.prepare_collection.outputs.collection_name }}
+        run: cd .. && pylint ${{ steps.prepare_collection.outputs.collection_namespace }}.${{ steps.prepare_collection.outputs.collection_name }}
       
       - name: Run black
         run: black -l79 --check .
