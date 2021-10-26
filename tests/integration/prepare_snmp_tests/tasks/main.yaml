@@ -46,11 +46,18 @@
   become: True
   run_once: True
 
-- name: Restart the snmpd daemon after add user in conf
-  ansible.builtin.service: 
-    name: snmpd
-    state: restarted
+- name: Cat the file
+  ansible.builtin.shell:
+    cmd: cat /var/lib/snmp/snmpd.conf
   vars:
     ansible_connection: local
   become: True
-  run_once: True
+
+# - name: Restart the snmpd daemon after add user in conf
+#   ansible.builtin.service: 
+#     name: snmpd
+#     state: restarted
+#   vars:
+#     ansible_connection: local
+#   become: True
+#   run_once: True
