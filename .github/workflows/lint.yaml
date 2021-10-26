@@ -24,10 +24,10 @@ jobs:
         uses: ./.github/actions/ansible_collection
       
       - name: Run pylint
-        run: pylint plugins
+        run: pylint --verbose -ry plugins
       
       - name: Run black
         run: black -l79 --check .
       
       - name: Run ansible-test sanity
-        run: ansible-test sanity ${{ matrix.python-version }}" 
+        run: ansible-test sanity --python ${{ matrix.python-version }}" 
