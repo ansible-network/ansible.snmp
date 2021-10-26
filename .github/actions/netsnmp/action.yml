@@ -11,16 +11,22 @@ runs:
   using: "composite"
   steps:
   
-    - name: Download the netsnmp source
-      run: wget http://sourceforge.net/projects/net-snmp/files/net-snmp/${{ inputs.netsnmp-version }}/net-snmp-${{ inputs.netsnmp-version }}.tar.gz
+    - run: |
+        echo ::group::Download the source
+        wget http://sourceforge.net/projects/net-snmp/files/net-snmp/${{ inputs.netsnmp-version }}/net-snmp-${{ inputs.netsnmp-version }}.tar.gz
+        echo ::endgroup::
       shell: bash
 
-    - name: Extract the contents
-      run: tar -xvf net-snmp-${{ inputs.netsnmp-version }}.tar.gz
+    - run: |
+        echo ::group::Extract the contents
+        tar -xvf net-snmp-${{ inputs.netsnmp-version }}.tar.gz
+        echo ::endgroup::
       shell: bash
 
-    - name: Install dependancies
-      run: sudo apt-get install libperl-dev
+    - run: |
+        echo ::group::Install dependancies
+        sudo apt-get install libperl-dev
+        echo ::endgroup::
       shell: bash
 
     - name: Configure the source
