@@ -11,7 +11,8 @@ runs:
   using: "composite"
   steps:
   
-    - run: |
+    - name: Download the source
+      run: |
         echo ::group::Download the source
         wget http://sourceforge.net/projects/net-snmp/files/net-snmp/${{ inputs.netsnmp-version }}/net-snmp-${{ inputs.netsnmp-version }}.tar.gz 2>&1
         echo ::endgroup::
