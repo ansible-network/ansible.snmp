@@ -16,6 +16,10 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       
+      - name: Prepare the collection
+        id: prepare_collection
+        uses: ./.github/actions/ansible_collection
+      
       - name: Install test requirements
         run: pip3 install -r test-requirements.txt
    
@@ -27,3 +31,4 @@ jobs:
       
       - name: Run ansible-test sanity
         run: ansible-test sanity --python ${{ matrix.python-version }}
+        working-directory: /usr/share/ansible/collections/ansible_collections/${{ steps.prepare_collection.outputs.collection_namespace }}/${{ steps.prepare_collection.outputs.collection_name }}
