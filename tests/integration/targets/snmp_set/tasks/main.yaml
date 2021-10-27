@@ -3,7 +3,7 @@
   vars:
     connection: "{{ version }}"
   loop:
-  - v1
+  # - v1 No SNMP v1 set support on Ubuntu
   - v2c
   - v3usm
   loop_control:
