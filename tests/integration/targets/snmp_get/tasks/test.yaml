@@ -18,4 +18,3 @@
     - "'Ubuntu' in output.result.0.sysDescr"
     - "'Ubuntu' in output.raw.0.val"
     - "'Ubuntu' in output.raw.1.val"
-
