@@ -27,3 +27,6 @@
     dest: /etc/systemd/system/snmpd.service
   become: True
   notify: "netsnmp_configuration_change"
+
+- name: Run handlers if needed
+  meta: flush_handlers
