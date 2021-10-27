@@ -11,3 +11,11 @@
     numeric: False
     long_names: True
   register: output
+
+- name: Ensure the output is valid
+  assert:
+    that:
+    - "'Ubuntu' in output.result.0.sysDescr"
+    - "'Ubuntu' in output.raw.0.val"
+    - "'Ubuntu' in output.raw.1.val"
+

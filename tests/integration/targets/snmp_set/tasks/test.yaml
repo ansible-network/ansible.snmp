@@ -23,8 +23,11 @@
 - name: Ensure values are not set to a desired value
   ansible.builtin.assert:
     that:
-    - output.result.sysContact != desired_contact
-    - output.result.sysLocation != desired_location
+    - output.result.0.sysContact != desired_contact
+    - output.raw.0.val != desired_contact
+    - output.result.0.sysLocation != desired_location
+    - output.raw.1.val != desired_location
+
 
 - name: Set several individual OIDs to a desired value
   ansible.snmp.set:
@@ -39,8 +42,11 @@
 - name: Ensure values are set to a desired value
   ansible.builtin.assert:
     that:
-    - output.result.sysContact == desired_contact
-    - output.result.sysLocation == desired_location
+    - output.result.0.sysContact == desired_contact
+    - output.raw.0.val == desired_contact
+    - output.result.0.sysLocation == desired_location
+    - output.raw.1.val == desired_location
+
 
 - name: Set several individual OIDs to an undesired value
   ansible.snmp.set:
@@ -55,5 +61,7 @@
 - name: Ensure values are set to an undesired value
   ansible.builtin.assert:
     that:
-    - output.result.sysContact == undesired_contact
-    - output.result.sysLocation == undesired_location
+    - output.result.0.sysContact == undesired_contact
+    - output.raw.0.val == undesired_contact
+    - output.result.0.sysLocation == undesired_location
+    - output.raw.1.val == undesired_location
