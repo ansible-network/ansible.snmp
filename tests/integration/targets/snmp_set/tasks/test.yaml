@@ -20,6 +20,7 @@
     - oid: "SNMPv2-MIB::sysLocation"
       iid: '0'
       value: "{{ desired_location }}"
+  register: output
 
 - name: Ensure values are set to a desired value
   ansible.builtin.assert:
@@ -42,6 +43,7 @@
     - oid: "SNMPv2-MIB::sysLocation"
       iid: '0'
       value: "{{ undesired_location }}"
+  register: output
 
 - name: Ensure values are set to an undesired value
   ansible.builtin.assert:
