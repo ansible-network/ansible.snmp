@@ -32,9 +32,9 @@ from typing import Union
 
 
 class IntrospectableSimpleNamespace(SimpleNamespace):
-    """A modifed SimpleNamespace that allows for introspection
+    """A modified SimpleNamespace that allows for introspection
     for attributes that have a value or not. Used immediately
-    after instantion, indicates attrbutes that had a default value set"""
+    after instantiation, indicates attributes that had a default value set"""
 
     @classmethod
     def _describe(cls) -> Dict:
@@ -129,7 +129,7 @@ class Snmpv3Connection(SnmpConnectionBase):
 
 
 class Snmpv3UsmConnection(Snmpv3Connection):
-    """The SNMP v3 user secutiry model class
+    """The SNMP v3 user security model class
 
     This contains attributes for the SNMP v3 USM connection"""
 
@@ -144,10 +144,10 @@ class Snmpv3UsmConnection(Snmpv3Connection):
 #       that doesn't violate the UPPER_CASE convention for enum
 #       it wasn't obvious
 class SnmpConfigurationParamMap(Enum):
-    """Map the configuration attributes to their netsnmp conterparts
+    """Map the configuration attributes to their netsnmp counterparts
 
     attributes should map to docstring/argspec attributes
-    values should coorespond to netsnmp attributes
+    values should correspond to netsnmp attributes
     """
 
     # pylint: disable=invalid-name
@@ -160,10 +160,10 @@ class SnmpConfigurationParamMap(Enum):
 
 
 class SnmpConnectionParamMap(Enum):
-    """Map the connection attributes to thei netsnmp counterparts
+    """Map the connection attributes to their netsnmp counterparts
 
     attributes should map to connection options
-    values should coorespond to netsnmp attributes
+    values should correspond to netsnmp attributes
     """
 
     # pylint: disable=invalid-name
@@ -176,7 +176,7 @@ class SnmpConnectionParamMap(Enum):
     retries = "Retries"
 
     # v1 only
-    # handled seperately because it's a setter not a arg/kwarg v1 only
+    # handled separately because it's a setter not a arg/kwarg v1 only
     # retry_no_such = "RetryNoSuch"
 
     # v1/v2c session

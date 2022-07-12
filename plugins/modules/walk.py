@@ -57,7 +57,7 @@ options:
         required: True
       iid:
         description:
-        - the dotted-decimal, instance idenfier, for scalar MIB objects use '0'
+        - the dotted-decimal, instance identifier, for scalar MIB objects use '0'
         type: str
   numeric:
     description:

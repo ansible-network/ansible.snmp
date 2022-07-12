@@ -140,3 +140,8 @@ mypy_tmp_dir/
 
 # IntelliJ
 .idea/
+
+# ide
+*.code-workspace
+.vscode/
+.DS_Store

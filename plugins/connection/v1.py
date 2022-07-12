@@ -25,7 +25,7 @@ requirements:
 options:
   community:
     description:
-    - Specifc the community string for SNMP v1 connections.
+    - Specific the community string for SNMP v1 connections.
     default: public
     type: str
     ini:

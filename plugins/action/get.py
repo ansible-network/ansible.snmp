@@ -24,6 +24,11 @@ from ansible_collections.ansible.snmp.plugins.plugin_utils.snmp_action_base impo
 
 # pylint: enable=import-error
 
+# import debugpy
+
+# debugpy.listen(3000)
+# debugpy.wait_for_client()
+
 
 class ActionModule(SnmpActionBase):
     """action module"""
@@ -34,9 +39,7 @@ class ActionModule(SnmpActionBase):
         self._result: Dict
         self._task_vars: Dict
 
-    def run(
-        self, tmp: None = None, task_vars: Union[Dict, None] = None
-    ) -> Dict:
+    def run(self, tmp: None = None, task_vars: Union[Dict, None] = None) -> Dict:
         """The std execution entry pt for an action plugin
 
         :param tmp: no longer used
@@ -64,8 +67,6 @@ class ActionModule(SnmpActionBase):
         if response.error:
             self._result.update({"failed": True, "msg": response.error})
         else:
-            self._result.update(
-                {"result": response.result, "raw": response.raw}
-            )
+            self._result.update({"result": response.result, "raw": response.raw})
 
         return self._result

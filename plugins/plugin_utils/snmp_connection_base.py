@@ -45,15 +45,13 @@ class SnmpConnectionBase(ConnectionBase):
         self._oids: List
         if not HAS_NETSNMP:
             msg = "python bindings for netsnmp "
-            msg += (
-                "(See the README for the ansible.snmp collection for details."
-            )
+            msg += "(See the README for the ansible.snmp collection for details."
             raise AnsibleError(missing_required_lib(msg))
 
     def _connect(self) -> None:
         """Make the connection
 
-        Note: We never set self._connected true because the netsnmp session cannont be reused
+        Note: We never set self._connected true because the netsnmp session cannot be reused
         this forces task executor to create a new connection for every task, or looped task
         """
         if not self._connected:
@@ -66,9 +64,7 @@ class SnmpConnectionBase(ConnectionBase):
                     setattr(self._connection, param, value)
             host = self._play_context.remote_addr
             version = self.get_option("version")
-            self._display.vvv(
-                f"ESTABLISHED SNMP v{version} CONNECTION: {host}"
-            )
+            self._display.vvv(f"ESTABLISHED SNMP v{version} CONNECTION: {host}")
 
         self._instance = SnmpInstance(
             connection=self._connection,
