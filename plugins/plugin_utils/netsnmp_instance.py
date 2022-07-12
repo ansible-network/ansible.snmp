@@ -52,9 +52,7 @@ class SnmpInstance:
 
     def __init__(
         self,
-        connection: Union[
-            Snmpv1Connection, Snmpv2cConnection, Snmpv3UsmConnection
-        ],
+        connection: Union[Snmpv1Connection, Snmpv2cConnection, Snmpv3UsmConnection],
         configuration: SnmpConfiguration,
     ):
 
@@ -107,7 +105,7 @@ class SnmpInstance:
                 except ValueError:
                     pass
             # This does not handle OCTETSTR correctly
-            # but al least it will be a string
+            # but at least it will be a string
             # OCTETSTR is best handled with "use_sprint_value"
             if isinstance(entry.val, bytes):
                 value = str(value)
