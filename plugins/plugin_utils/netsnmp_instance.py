@@ -12,10 +12,7 @@ __metaclass__ = type
 # pylint: enable=invalid-name
 
 import time
-
-from typing import List
-from typing import Union
-
+from typing import List, Union
 
 # Note: HAS_SNMP is checked in snmp_connection_base
 try:
@@ -26,13 +23,15 @@ except ImportError:
     HAS_NETSNMP = False
 
 
-from .netsnmp_defs import SnmpConfiguration
-from .netsnmp_defs import SnmpConfigurationParamMap
-from .netsnmp_defs import SnmpConnectionParamMap
-from .netsnmp_defs import SnmpResponse
-from .netsnmp_defs import Snmpv1Connection
-from .netsnmp_defs import Snmpv2cConnection
-from .netsnmp_defs import Snmpv3UsmConnection
+from .netsnmp_defs import (
+    SnmpConfiguration,
+    SnmpConfigurationParamMap,
+    SnmpConnectionParamMap,
+    SnmpResponse,
+    Snmpv1Connection,
+    Snmpv2cConnection,
+    Snmpv3UsmConnection,
+)
 
 
 class SnmpInstance:

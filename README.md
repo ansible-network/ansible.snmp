@@ -19,22 +19,19 @@ PEP440 is the schema used to describe the versions of Ansible.
 ## Included content
 
 <!--start collection content-->
-
 ### Connection plugins
-
-| Name                                                                                                                         | Description                                                           |
-| ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| [ansible.snmp.v1](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.v1_connection.rst)         | Make SNMP v1 connections to a device                                  |
-| [ansible.snmp.v2c](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.v2c_connection.rst)       | Make SNMP v2c connections to a device                                 |
-| [ansible.snmp.v3_usm](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.v3_usm_connection.rst) | Make SNMP v3 user-based security model (USM) connections to a device. |
+Name | Description
+--- | ---
+[ansible.snmp.v1](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.v1_connection.rst)|Make SNMP v1 connections to a device
+[ansible.snmp.v2c](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.v2c_connection.rst)|Make SNMP v2c connections to a device
+[ansible.snmp.v3_usm](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.v3_usm_connection.rst)|Make SNMP v3 user-based security model (USM) connections to a device.
 
 ### Modules
-
-| Name                                                                                                                 | Description                                                       |
-| -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| [ansible.snmp.get](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.get_module.rst)   | Perform an SNMP get against a remote device for one or more OIDs  |
-| [ansible.snmp.set](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.set_module.rst)   | Perform an SNMP set against a remote device for one or more OIDs  |
-| [ansible.snmp.walk](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.walk_module.rst) | Perform an SNMP walk against a remote device for one or more OIDs |
+Name | Description
+--- | ---
+[ansible.snmp.get](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.get_module.rst)|Perform an SNMP get against a remote device for one or more OIDs
+[ansible.snmp.set](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.set_module.rst)|Perform an SNMP set against a remote device for one or more OIDs
+[ansible.snmp.walk](https://github.com/ansible-collections/ansible.snmp/blob/main/docs/ansible.snmp.walk_module.rst)|Perform an SNMP walk against a remote device for one or more OIDs
 
 <!--end collection content-->
 
@@ -175,3 +172,4 @@ or install again after sourcing venv
 - dump MIBs into other formats, including python classes [libsmi](https://www.ibr.cs.tu-bs.de/projects/libsmi/smidump.html?lang=de)
 - Cisco MIB ftp details [here](https://www.cisco.com/c/en/us/support/docs/ip/simple-network-management-protocol-snmp/9226-mibs-9226.html#q2)
 - SNMP table traversal [here](https://datatracker.ietf.org/doc/html/rfc1187#page-2)
+

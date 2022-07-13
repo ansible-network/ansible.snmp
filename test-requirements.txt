@@ -1,7 +1,8 @@
-black
-coverage==4.5.4
+black==22.3.0 ; python_version > '3.5'
+flake8
+mock ; python_version < '3.5'
+pexpect
 pytest-xdist
-pylint
 yamllint
-ansible-navigator
-ansible-core
+coverage==4.5.4
+git+https://github.com/ansible-community/pytest-ansible-units.git

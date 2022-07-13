@@ -11,16 +11,11 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 # pylint: enable=invalid-name
 
-from typing import Dict
-from typing import Union
+from typing import Dict, Union
 
 # pylint: disable=import-error
-from ansible_collections.ansible.snmp.plugins.modules.get import (
-    DOCUMENTATION,
-)
-from ansible_collections.ansible.snmp.plugins.plugin_utils.snmp_action_base import (
-    SnmpActionBase,
-)
+from ansible_collections.ansible.snmp.plugins.modules.get import DOCUMENTATION
+from ansible_collections.ansible.snmp.plugins.plugin_utils.snmp_action_base import SnmpActionBase
 
 # pylint: enable=import-error
 

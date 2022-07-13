@@ -11,8 +11,8 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 # pylint: enable=invalid-name
 
-from typing import Dict
-from typing import Union
+from typing import Dict, Union
+
 from ansible.plugins.action import ActionBase
 
 # pylint: disable=import-error

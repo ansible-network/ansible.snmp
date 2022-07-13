@@ -11,16 +11,11 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 # pylint: enable=invalid-name
 
-from typing import Dict
-from typing import Union
+from typing import Dict, Union
 
 # pylint: disable=import-error
-from ansible_collections.ansible.snmp.plugins.modules.set import (
-    DOCUMENTATION,
-)
-from ansible_collections.ansible.snmp.plugins.plugin_utils.snmp_action_base import (
-    SnmpActionBase,
-)
+from ansible_collections.ansible.snmp.plugins.modules.set import DOCUMENTATION
+from ansible_collections.ansible.snmp.plugins.plugin_utils.snmp_action_base import SnmpActionBase
 
 # pylint: enable=import-error
 
@@ -35,7 +30,9 @@ class ActionModule(SnmpActionBase):
         self._task_vars: Dict
 
     def run(
-        self, tmp: None = None, task_vars: Union[Dict, None] = None
+        self,
+        tmp: None = None,
+        task_vars: Union[Dict, None] = None,
     ) -> Dict:
         """The std execution entry pt for an action plugin
 
@@ -72,8 +69,8 @@ class ActionModule(SnmpActionBase):
                 "before": {
                     "result": pre_set_response.result,
                     "raw": pre_set_response.raw,
-                }
-            }
+                },
+            },
         )
         # close the connection, because the netsnmp session cannot be reused
         self._connection.close()
@@ -85,9 +82,7 @@ class ActionModule(SnmpActionBase):
         self._result["elapsed"]["total"] += set_response.elapsed
 
         if set_response.error:
-            final_error = (
-                f"SNMP set failed. The error was: '{set_response.error}'"
-            )
+            final_error = f"SNMP set failed. The error was: '{set_response.error}'"
             self._result.update({"failed": True, "msg": final_error})
             return self._result
         # close the connection, because the netsnmp session cannot be reused
@@ -111,8 +106,8 @@ class ActionModule(SnmpActionBase):
                 "after": {
                     "result": post_set_response.result,
                     "raw": post_set_response.raw,
-                }
-            }
+                },
+            },
         )
 
         if pre_set_response.raw != post_set_response.raw:

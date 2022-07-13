@@ -11,22 +11,18 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 # pylint: enable=invalid-name
 
-from typing import Dict
-from typing import List
-
-from ansible.plugins.connection import ConnectionBase, ensure_connect
-from ansible.module_utils.basic import missing_required_lib
+from typing import Dict, List
 
 from ansible.errors import AnsibleError
+from ansible.module_utils.basic import missing_required_lib
+from ansible.plugins.connection import ConnectionBase, ensure_connect
 from ansible.utils.display import Display
+
+from .netsnmp_defs import SnmpConfiguration, SnmpResponse
+from .netsnmp_instance import HAS_NETSNMP, SnmpInstance
 
 # pylint: disable=import-error
 
-from .netsnmp_defs import SnmpConfiguration
-from .netsnmp_defs import SnmpResponse
-
-from .netsnmp_instance import SnmpInstance
-from .netsnmp_instance import HAS_NETSNMP
 
 # pylint: enable=import-error
 
