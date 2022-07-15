@@ -45,4 +45,3 @@ repos:
     hooks:
       - id: isort
         name: Sort import statements using isort
-
