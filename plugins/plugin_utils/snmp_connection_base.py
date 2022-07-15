@@ -7,6 +7,7 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 # pylint: disable=invalid-name
 __metaclass__ = type
 # pylint: enable=invalid-name
@@ -20,6 +21,7 @@ from ansible.utils.display import Display
 
 from .netsnmp_defs import SnmpConfiguration, SnmpResponse
 from .netsnmp_instance import HAS_NETSNMP, SnmpInstance
+
 
 # pylint: disable=import-error
 

@@ -6,7 +6,6 @@ repos:
       - id: check-merge-conflict
       - id: check-symlinks
       - id: debug-statements
-      - id: end-of-file-fixer
       - id: no-commit-to-branch
         args: [--branch, main]
       - id: trailing-whitespace
@@ -51,8 +50,3 @@ repos:
     rev: 22.3.0
     hooks:
       - id: black
-
-  - repo: https://github.com/ansible-network/collection_prep
-    rev: 1.0.0
-    hooks:
-      - id: update-docs

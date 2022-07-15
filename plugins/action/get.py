@@ -7,6 +7,7 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 # pylint: disable=invalid-name
 __metaclass__ = type
 # pylint: enable=invalid-name
@@ -17,12 +18,8 @@ from typing import Dict, Union
 from ansible_collections.ansible.snmp.plugins.modules.get import DOCUMENTATION
 from ansible_collections.ansible.snmp.plugins.plugin_utils.snmp_action_base import SnmpActionBase
 
+
 # pylint: enable=import-error
-
-# import debugpy
-
-# debugpy.listen(3000)
-# debugpy.wait_for_client()
 
 
 class ActionModule(SnmpActionBase):

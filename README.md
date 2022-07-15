@@ -172,4 +172,3 @@ or install again after sourcing venv
 - dump MIBs into other formats, including python classes [libsmi](https://www.ibr.cs.tu-bs.de/projects/libsmi/smidump.html?lang=de)
 - Cisco MIB ftp details [here](https://www.cisco.com/c/en/us/support/docs/ip/simple-network-management-protocol-snmp/9226-mibs-9226.html#q2)
 - SNMP table traversal [here](https://datatracker.ietf.org/doc/html/rfc1187#page-2)
-

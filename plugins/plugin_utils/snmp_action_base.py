@@ -7,6 +7,7 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 # pylint: disable=invalid-name
 __metaclass__ = type
 # pylint: enable=invalid-name
@@ -19,6 +20,7 @@ from ansible.plugins.action import ActionBase
 from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
     AnsibleArgSpecValidator,
 )
+
 
 # pylint: enable=import-error
 

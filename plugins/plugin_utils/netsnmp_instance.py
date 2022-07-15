@@ -7,12 +7,15 @@
 
 from __future__ import absolute_import, division, print_function
 
+
 # pylint: disable=invalid-name
 __metaclass__ = type
 # pylint: enable=invalid-name
 
 import time
+
 from typing import List, Union
+
 
 # Note: HAS_SNMP is checked in snmp_connection_base
 try:
