@@ -27,7 +27,7 @@ jobs:
         run: pylint --verbose -ry plugins
 
       - name: Run black
-        run: black -l79 --check .
+        run: black -l100 --check .
 
       - name: Run ansible-test sanity
         run: ansible-test sanity --python ${{ matrix.python-version }} --requirements

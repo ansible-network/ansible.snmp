@@ -2,7 +2,7 @@
   include_vars:
     file: "../../prepare_snmp_tests/vars/{{ connection }}.yaml"
 
-- name: Retreive several individual OIDs
+- name: Retrieve several individual OIDs
   ansible.snmp.get:
     oids:
       - oid: "SNMPv2-MIB::sysDescr.0"

@@ -46,7 +46,3 @@ repos:
       - id: isort
         name: Sort import statements using isort
 
-  - repo: https://github.com/psf/black
-    rev: 22.3.0
-    hooks:
-      - id: black
