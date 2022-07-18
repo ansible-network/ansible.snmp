@@ -140,3 +140,4 @@ mypy_tmp_dir/
 
 # IntelliJ
 .idea/
+.vscode/
