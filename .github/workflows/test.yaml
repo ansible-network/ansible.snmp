@@ -13,4 +13,3 @@ on: # yamllint disable-line rule:truthy
 jobs:
   changelog:
     uses: ansible-network/github_actions/.github/workflows/changelog.yml@main
-
