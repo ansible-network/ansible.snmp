@@ -5,6 +5,6 @@
   loop:
     - v1
     - v2c
-    - v3_usm
+    - v3usm
   loop_control:
     loop_var: version
