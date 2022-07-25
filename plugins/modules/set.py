@@ -70,6 +70,8 @@ options:
 
 notes:
 - The SNMP set task will always return 'changed'
+- Tested against ubuntu 18.04 using net-snmp.
+- This module works with connection C(v1), C(v2c), C(v3_usm).
 """
 
 EXAMPLES = r"""
