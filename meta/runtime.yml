@@ -1,10 +1,2 @@
 ---
-plugin_routing:
-  modules:
-    walk:
-      redirect: ansible.snmp.walk
-    get:
-      redirect: ansible.snmp.get
-    set:
-      redirect: ansible.snmp.set
 requires_ansible: ">=2.9.10"
