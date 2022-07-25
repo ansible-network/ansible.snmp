@@ -108,7 +108,7 @@ Parameters
                                     <li>UINTEGER</li>
                                     <li>TICKS</li>
                                     <li>OPAQUE</li>
-                                    <li>None</li>
+                                    <li>NULL</li>
                         </ul>
                 </td>
                 <td>
