@@ -5,6 +5,6 @@
   loop:
     # - v1 No SNMP v1 set support on Ubuntu
     - v2c
-    - v3usm
+    - v3_usm
   loop_control:
     loop_var: version
