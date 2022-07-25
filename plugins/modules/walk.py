@@ -13,7 +13,7 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 # pylint: enable=invalid-name
 
-DOCUMENTATION = r"""
+DOCUMENTATION = """
 ---
 module: walk
 author: Bradley Thornton (@cidrblock)

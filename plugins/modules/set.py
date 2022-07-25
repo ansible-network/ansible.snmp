@@ -13,7 +13,7 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 # pylint: enable=invalid-name
 
-DOCUMENTATION = r"""
+DOCUMENTATION = """
 ---
 module: set
 author: Bradley Thornton (@cidrblock)
@@ -46,18 +46,18 @@ options:
         - The type of value
         type: str
         choices:
-        - OBJECTID
-        - OCTETSTR
-        - INTEGER
-        - NETADDR
-        - IPADDR
-        - COUNTER
-        - COUNTER64
-        - GAUGE
-        - UINTEGER
-        - TICKS
-        - OPAQUE
-        - NULL
+        - "OBJECTID"
+        - "OCTETSTR"
+        - "INTEGER"
+        - "NETADDR"
+        - "IPADDR"
+        - "COUNTER"
+        - "COUNTER64"
+        - "GAUGE"
+        - "UINTEGER"
+        - "TICKS"
+        - "OPAQUE"
+        - "NULL"
       value:
         description:
         - The value to be set for the OID.
