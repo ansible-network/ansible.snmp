@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  serial: 1
+  # serial: 1
   gather_facts: no
   vars:
     collection_path: /usr/share/ansible/collections/ansible_collections
