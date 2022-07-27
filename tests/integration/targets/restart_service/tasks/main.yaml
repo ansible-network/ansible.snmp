@@ -1,0 +1,6 @@
+---
+- name: Restart SNMP Daemon
+  ansible.builtin.service:
+    name: snmpd
+    state: restarted
+  become: True
