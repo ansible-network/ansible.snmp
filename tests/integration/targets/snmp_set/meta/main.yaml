@@ -1,4 +1,3 @@
 ---
 dependencies:
   - prepare_snmp_tests
-  - restart_service
