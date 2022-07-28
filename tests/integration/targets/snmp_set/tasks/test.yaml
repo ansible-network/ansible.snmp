@@ -10,6 +10,10 @@
     undesired_contact: "undesired_contact_value"
     undesired_location: "undesired_location_value"
 
+- name: Pause for 5 minutes to build app cache
+  ansible.builtin.pause:
+    minutes: 1
+
 - name: Set several individual OIDs to a desired value
   ansible.snmp.set:
     oids:
