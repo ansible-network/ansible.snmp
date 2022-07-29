@@ -30,3 +30,7 @@
 
 - name: Run handlers if needed
   meta: flush_handlers
+
+- name: Check snmpwalk command output
+  ansible.builtin.command: snmpwalk -v3 -a MD5 -A password -X password -l authNoPriv -u test localhost
+  register: mymotd

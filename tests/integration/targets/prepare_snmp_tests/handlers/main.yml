@@ -5,7 +5,7 @@
   become: True
   listen: "netsnmp_configuration_change"
 
-- name: Run the snmpd daemon
+- name: Restart the snmpd daemon
   ansible.builtin.service:
     name: snmpd
     state: restarted
