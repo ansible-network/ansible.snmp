@@ -1,4 +1,4 @@
-- name: Include the test file
+- name: Include the test file get tests
   include: test.yaml
   vars:
     connection: "{{ version }}"

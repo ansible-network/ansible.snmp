@@ -1,9 +1,9 @@
-- name: Include the test file set tests
+- name: Include the test file walk tests
   include: test.yaml
   vars:
     connection: "{{ version }}"
   loop:
-    # - v1 No SNMP v1 set support on Ubuntu
+    - v1
     - v2c
     - v3usm
   loop_control:
