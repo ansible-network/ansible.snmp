@@ -14,6 +14,4 @@
 - name: Ensure the output is valid
   assert:
     that:
-      - "'Ubuntu' in output.result.0.sysDescr"
-      - "'Ubuntu' in output.raw.0.val"
-      - "'Ubuntu' in output.raw.1.val"
+      - "'lo' in output.result.0.ifDescr"

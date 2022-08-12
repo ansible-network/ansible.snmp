@@ -81,6 +81,76 @@ notes:
 
 EXAMPLES = r"""
 ---
+# Walk playbook
+
+- name: Walk play example
+  ansible.snmp.walk:
+    oids:
+      - oid: IF-MIB::ifIndex
+      - oid: IF-MIB::ifDescr
+
+# Task output
+
+# ok: [test_rpi] => {
+#     "changed": false,
+#     "elapsed": {
+#         "total": 0.10171151161193848,
+#         "walk": 0.10171151161193848
+#     },
+#     "raw": [
+#         {
+#             "iid": "1",
+#             "tag": "ifIndex",
+#             "type": "INTEGER32",
+#             "val": "1"
+#         },
+#         {
+#             "iid": "1",
+#             "tag": "ifDescr",
+#             "type": "OCTETSTR",
+#             "val": "lo"
+#         },
+#         {
+#             "iid": "2",
+#             "tag": "ifIndex",
+#             "type": "INTEGER32",
+#             "val": "2"
+#         },
+#         {
+#             "iid": "2",
+#             "tag": "ifDescr",
+#             "type": "OCTETSTR",
+#             "val": "eth0"
+#         },
+#         {
+#             "iid": "3",
+#             "tag": "ifIndex",
+#             "type": "INTEGER32",
+#             "val": "3"
+#         },
+#         {
+#             "iid": "3",
+#             "tag": "ifDescr",
+#             "type": "OCTETSTR",
+#             "val": "Device 02d0:a9a6"
+#         }
+#     ],
+#     "result": [
+#         {
+#             "ifDescr": "lo",
+#             "ifIndex": 1
+#         },
+#         {
+#             "ifDescr": "eth0",
+#             "ifIndex": 2
+#         },
+#         {
+#             "ifDescr": "Device 02d0:a9a6",
+#             "ifIndex": 3
+#         }
+#     ]
+# }
+
 """
 
 RETURN = """
