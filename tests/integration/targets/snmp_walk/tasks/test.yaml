@@ -3,11 +3,9 @@
     file: "../../prepare_snmp_tests/vars/{{ connection }}.yaml"
 
 - name: Retrieve several individual OIDs
-  ansible.snmp.get:
+  ansible.snmp.walk:
     oids:
       - oid: "SNMPv2-MIB::sysDescr.0"
-      - oid: "SNMPv2-MIB::sysDescr"
-        iid: "0"
     numeric: False
     long_names: True
   register: output
