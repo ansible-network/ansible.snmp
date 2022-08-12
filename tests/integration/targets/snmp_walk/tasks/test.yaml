@@ -5,7 +5,8 @@
 - name: Retrieve several individual OIDs
   ansible.snmp.walk:
     oids:
-      - oid: "SNMPv2-MIB::sysDescr.0"
+      - oid: IF-MIB::ifIndex
+      - oid: IF-MIB::ifDescr
     numeric: False
     long_names: True
   register: output
