@@ -80,6 +80,45 @@ notes:
 
 EXAMPLES = r"""
 ---
+# Get playbook
+
+- name: Retrieve several individual OIDs
+  ansible.snmp.get:
+    oids:
+      - oid: "SNMPv2-MIB::sysDescr.0"
+      - oid: "SNMPv2-MIB::sysDescr"
+        iid: "0"
+    numeric: False
+    long_names: True
+
+# Task output
+
+# ok: [localhost] => {
+#     "changed": false,
+#     "elapsed": {
+#         "get": 0.00030612945556640625,
+#         "total": 0.00030612945556640625
+#     },
+#     "raw": [
+#         {
+#             "iid": "0",
+#             "tag": "sysDescr",
+#             "type": "OCTETSTR",
+#             "val": "Linux fv-az451-386 5.15.0-1014-azure #17~20.04.1-Ubuntu x86_64"
+#         },
+#         {
+#             "iid": "0",
+#             "tag": "sysDescr",
+#             "type": "OCTETSTR",
+#             "val": "Linux fv-az451-386 5.15.0-1014-azure #17~20.04.1-Ubuntu x86_64"
+#         }
+#     ],
+#     "result": [
+#         {
+#             "sysDescr": "Linux fv-az451-386 5.15.0-1014-azure #17~20.04.1-Ubuntu x86_64"
+#         }
+#     ]
+# }
 """
 
 RETURN = """
