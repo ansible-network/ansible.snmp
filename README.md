@@ -5,7 +5,7 @@ The Ansible `ansible.snmp` collection includes a variety of plugins for using SN
 <!--start requires_ansible-->
 ## Ansible version compatibility
 
-This collection has been tested against following Ansible versions: **>=2.9.10**.
+This collection has been tested against the following Ansible versions: **>=2.9.10**.
 
 For collections that support Ansible 2.9, please ensure you update your `network_os` to use the
 fully qualified collection name (for example, `cisco.ios.ios`).
@@ -50,7 +50,7 @@ collections:
 ## Using this collection
 You can call modules by their Fully Qualified Collection Namespace (FQCN), such as `ansible.snmp.get`.
 The most common use case for this collection is to retrieve operation state information from a device using `SNMP get` or `SNMP walk`
-The following example task gets the existing configuration on a SNMP enabled device, using the FQCN:
+The following example task gets the existing configuration on an SNMP-enabled device, using the FQCN:
 
 ```yaml
 ---
@@ -72,7 +72,7 @@ The following example task gets the existing configuration on a SNMP enabled dev
 
 ## Contributing to this collection
 
-This collection is intended for plugins that are not platform or discipline specific. Simple plugin examples should be generic in nature. More complex examples can include real world platform modules to demonstrate the utility of the plugin in a playbook.
+This collection is intended for plugins that are not platform or discipline-specific. Simple plugin examples should be generic in nature. More complex examples can include real-world platform modules to demonstrate the utility of the plugin in a playbook.
 
 We welcome community contributions to this collection. If you find problems, please open an issue or create a PR against the [ansible.utils collection repository](https://github.com/ansible-collections/ansible.utils). See [Contributing to Ansible-maintained collections](https://docs.ansible.com/ansible/devel/community/contributing_maintained_collections.html#contributing-maintained-collections) for complete details.
 
@@ -93,17 +93,17 @@ For automated release announcements refer [here](https://twitter.com/AnsibleCont
 
 ## Roadmap
 
-For information on releasing, versioning and deprecation see the [stratergy document](https://access.redhat.com/articles/4993781).
+For information on releasing, versioning and deprecation see the [strategy document](https://access.redhat.com/articles/4993781).
 
-In general, major versions can contain breaking changes, while minor versions only contain new features (like new plugin addition) and bugfixes.
-The releases will be done on an as-needed basis when new features and/or bugfixes are done.
+In general, major versions can contain breaking changes, while minor versions only contain new features (like new plugin addition) and bug fixes.
+The releases will be done on an as-needed basis when new features and/or bug fixes are done.
 
 <!-- Optional. Include the roadmap for this collection, and the proposed release/versioning strategy so users can anticipate the upgrade/update cycle. -->
 
 ## More information
 
-- [Ansible Collection overview](https://github.com/ansible-collections/overview)
-- [Ansible User guide](https://docs.ansible.com/ansible/latest/user_guide/index.html)
+- [Ansible Collection Overview](https://github.com/ansible-collections/overview)
+- [Ansible User Guide](https://docs.ansible.com/ansible/latest/user_guide/index.html)
 - [Ansible Developer guide](https://docs.ansible.com/ansible/latest/dev_guide/index.html)
 - [Ansible Community code of conduct](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
 
@@ -153,7 +153,7 @@ more /etc/ld.so.conf.d/netsnmp.conf
   - 1: snmp.conf
   - 4: Textual mib parsing
   - 1: Specifies directory to be searched for mibs
-  - Enter the list of directories to search through for mibs: +/home/bthornto/cisco_mibs
+  - Enter the list of directories to search through for mibs: +/home/ftp_site/cisco_mibs
   - finished
   - finished
   - quit
@@ -173,7 +173,7 @@ or install again after sourcing venv
 
 - [net-snmp bindings](https://github.com/net-snmp/net-snmp/blob/master/python/README)
 - dump MIBs into other formats, including python classes [libsmi](https://www.ibr.cs.tu-bs.de/projects/libsmi/smidump.html?lang=de)
-- Cisco MIB ftp details [here](https://www.cisco.com/c/en/us/support/docs/ip/simple-network-management-protocol-snmp/9226-mibs-9226.html#q2)
+- Cisco MIB FTP details [here](https://www.cisco.com/c/en/us/support/docs/ip/simple-network-management-protocol-snmp/9226-mibs-9226.html#q2)
 - SNMP table traversal [here](https://datatracker.ietf.org/doc/html/rfc1187#page-2)
 
 ## Licensing
