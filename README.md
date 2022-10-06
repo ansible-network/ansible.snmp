@@ -1,7 +1,5 @@
 # Ansible SNMP Collection
 
-[![Codecov](https://img.shields.io/codecov/c/github/ansible-collections/ansible.snmp)](https://codecov.io/gh/ansible-collections/ansible.snmp)
-
 The Ansible `ansible.snmp` collection includes a variety of plugins for using SNMP on the control node to make SNMP connections to a device.
 
 <!--start requires_ansible-->
@@ -50,8 +48,21 @@ collections:
 ```
 
 ## Using this collection
-
+You can call modules by their Fully Qualified Collection Namespace (FQCN), such as `ansible.snmp.get`.
 The most common use case for this collection is to retrieve operation state information from a device using `SNMP get` or `SNMP walk`
+The following example task gets the existing configuration on a SNMP enabled device, using the FQCN:
+
+```yaml
+---
+- name: Retrieve several individual OIDs
+  ansible.snmp.get:
+    oids:
+      - oid: "SNMPv2-MIB::sysDescr.0"
+      - oid: "SNMPv2-MIB::sysDescr"
+        iid: "0"
+    numeric: false
+    long_names: True
+```
 
 **NOTE**: For Ansible 2.9, you may not see deprecation warnings when you run your playbooks with this collection. Use this documentation to track when a module is deprecated.
 
@@ -67,14 +78,6 @@ We welcome community contributions to this collection. If you find problems, ple
 
 See the [Ansible Community Guide](https://docs.ansible.com/ansible/latest/community/index.html) for details on contributing to Ansible.
 
-### Developer notes
-
-- 100% code coverage is the goal, although it's not always possible. Please include unit and integration tests with all PRs. PRs should not cause a decrease in code coverage.
-- Filter plugins should be 1 per file, with an included DOCUMENTATION string, or reference a lookup plugin with the same name.
-- Action, filter, and lookup plugins should use argspec validation. See [AnsibleArgSpecValidator](https://github.com/ansible-collections/ansible.utils/blob/main/plugins/module_utils/common/argspec_validate.py).
-- Use of the latest version of black is required for formatting (black -l79)
-- The README contains a table of plugins. Use the [collection_prep](https://github.com/ansible-network/collection_prep) utilities to maintain this.
-
 ### Code of Conduct
 
 This collection follows the Ansible project's
@@ -85,7 +88,7 @@ Please read and familiarize yourself with this document.
 
 <!--Add a link to a changelog.md file or an external docsite to cover this information. -->
 
-Release notes are available [here](https://github.com/ansible-collections/ansible.utils/blob/main/changelogs/CHANGELOG.rst)
+Release notes are available [here](https://github.com/ansible-collections/ansible.snmp/blob/main/changelogs/CHANGELOG.rst)
 For automated release announcements refer [here](https://twitter.com/AnsibleContent).
 
 ## Roadmap
@@ -166,12 +169,17 @@ or install again after sourcing venv
 - `source venv/bin/activate`
 - `pip install net-snmp-5.9.1/python`
 
-#### Good stuff to read
+#### Additional information
 
 - [net-snmp bindings](https://github.com/net-snmp/net-snmp/blob/master/python/README)
 - dump MIBs into other formats, including python classes [libsmi](https://www.ibr.cs.tu-bs.de/projects/libsmi/smidump.html?lang=de)
 - Cisco MIB ftp details [here](https://www.cisco.com/c/en/us/support/docs/ip/simple-network-management-protocol-snmp/9226-mibs-9226.html#q2)
 - SNMP table traversal [here](https://datatracker.ietf.org/doc/html/rfc1187#page-2)
 
+## Licensing
+
+GNU General Public License v3.0 or later.
+
+See [LICENSE](https://www.gnu.org/licenses/gpl-3.0.txt) to see the full text.
 
 
