@@ -1,4 +1,9 @@
-# Ansible SNMP Collection
+# Ansible SNMP Collection (UNMAINTAINED)
+
+## All of Ansible SNMP collection and contents are moved, below are the link for Ansible SNMP Galaxy and Github repo:
+
+## Check Point Github repo -> https://github.com/ansible-collections/ansible.snmp
+## Check Point Galaxy repo -> https://galaxy.ansible.com/ansible/snmp
 
 The Ansible `ansible.snmp` collection includes a variety of plugins for using SNMP on the control node to make SNMP connections to a device.
 
